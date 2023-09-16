@@ -1,2 +1,2 @@
-# Oasis_Banking_System
+# Sparks_Foundation_Banking_System
 Oasis internship task of banking system
