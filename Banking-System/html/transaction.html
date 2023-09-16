@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/transfer.css">
+    <link rel="stylesheet"type="text/css"
+       href="/css/transaction.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contact.html">ContactUs</a></li>
+            </ul>
+        </div>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Send to : <span id="receiver_email"></span></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <table>
+                            <tr>
+                                <td>
+                                    Enter Amount : <input type="number" id="amount_to_be_sent" min="0" value="0">
+                                </td>
+                                <td class="m-auto">
+                                    <small> <span><button class="btn btn-outline-primary m-2" onclick="calculate()">Send</button></span></small>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Large Modal-->
+        <!-- The Modal -->
+        <div class="modal fade" id="TransactionModal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Transaction History</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="table-responsive">
+                            <table class="table border" id="transaction_addition">
+                                <tr>
+                                    <th>Receiver</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //content -->
+        <div class="containeracc justify-content-center">
+            <center>
+                <table id="holder_information" class="m-auto">
+                    <tr>
+                        <th class="text">Account holder's name : </th>
+                        <th>XYZ</th>
+                    </tr>
+                    <tr>
+                        <th class="text">Balance: </th>
+                        <th id="total_balance">100000</th>
+                    </tr>
+                    <tr class="text-center">
+                        <td colspan="4"><button class="btn btn-outline-primary p-2" data-toggle="modal" data-target="#TransactionModal">View all transaction</button></td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <div class="pt-3 table-responsive">
+            <table class="table border w-75 m-auto">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                    <th>Operation</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>A</td>
+                    <td>A@gmail.com</td>
+                    <td id="hrutika@gmail.com_value">3000</td>
+                    <td data-label="#"><button value="hrutika@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>B</td>
+                    <td>B@gmail.com</td>
+                    <td id="Dhruv@gmail.com_value">4000</td>
+                    <td data-label="#"><button value="Dhruv@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>C</td>
+                    <td>C@gmail.com</td>
+                    <td id="Hitesh1@gmail.com_value">5000</td>
+                    <td data-label="#"><button value="Hitesh1@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>D</td>
+                    <td>D@gmail.com</td>
+                    <td id="kav23@gmail.com_value">6000</td>
+                    <td data-label="#"><button value="kav23@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>E</td>
+                    <td>E@gmail.com</td>
+                    <td id="Manik@gmail.com_value">70000</td>
+                    <td data-label="#"><button value="Manik@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)"> Transact</button></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>F</td>
+                    <td>F@gmail.com</td>
+                    <td id="shree@gmail.com_value">800</td>
+                    <td data-label="#"><button value="shree@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>J</td>
+                    <td>j@gmail.com</td>
+                    <td id="jay02@gmail.com_value">20200</td>
+                    <td data-label="#"><button value="jay02@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function update_payment(email_id) {
+        document.getElementById('receiver_email').innerHTML = email_id;
+    }
+
+    function calculate() {
+        let total_balance_row = document.getElementById('total_balance');
+        let total_balance = parseInt(total_balance_row.innerHTML);
+        let amount_to_be_sent = parseInt(document.getElementById("amount_to_be_sent").value);
+        if (amount_to_be_sent > total_balance)
+            alert("Less Balance");
+        else if (amount_to_be_sent <= 0 || Number.isNaN(amount_to_be_sent)) {
+            alert("Invalid Amount");
+        } else {
+
+            let receiver = document.getElementById('receiver_email').innerHTML;
+            let receiver_balance = parseInt(document.getElementById(receiver + "_value").innerHTML);
+            total_balance_row.innerHTML = total_balance - amount_to_be_sent;
+            document.getElementById(receiver + "_value").innerHTML = receiver_balance + amount_to_be_sent;
+            let date = new Date();
+            let transactions_table = document.getElementById('transaction_addition');
+            let row = transactions_table.insertRow(1);
+            let receiver_column = row.insertCell(0);
+            let amount_column = row.insertCell(1);
+            let date_column = row.insertCell(2);
+            receiver_column.innerHTML = receiver;
+            amount_column.innerHTML = amount_to_be_sent;
+            date_column.innerHTML = date;
+            alert("Sent Successfully");
+        }
+    }
+    </script>
+</body>
+
+</html>

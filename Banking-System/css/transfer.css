@@ -1,0 +1,72 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+.text-center button{
+    padding: 100px;
+    width: 120px;
+    height: 45px;
+    font-size: 15px;
+    color: black;
+    opacity: 0.8;
+    background: rgba(0,0,0,0.6);
+    
+}
+#butt button{
+    display: inline;
+    color: white;
+    text-decoration: none;
+    width: 150px;
+    height: 30px;
+    opacity: 0.8;
+    font-size: 15px;
+    padding: 1px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.6);
+    margin-top: 20px;
+}
+#butt button:hover{
+    color: orange;
+    opacity: 0.8;
+}
+
+h1{
+    font-size: 25px;
+    margin-top: 40px;
+    color:snow;
+    opacity: 0.9;
+    margin-left: 150px;
+}
+
+
+table{
+    background: rgba(0,0,0,0.6);
+    border-radius: 6px;
+     margin-top: 40px;
+    margin-left: 150px;
+    width: 10px;
+}
+table tr th{
+    border-radius: 5px;
+    padding: 15px;
+    color: white;
+    font-size: 16px;
+    border-collapse: collapse;
+    opacity: 0.8;
+    vertical-align: top;
+    text-align: center;
+    
+}
+table tr td{
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+}
+table tr td .btn{
+    background-color: bisque;
+    text-decoration: none;
+    width: 60px;
+    opacity: 0.7;
+    padding: 1px;
+}
